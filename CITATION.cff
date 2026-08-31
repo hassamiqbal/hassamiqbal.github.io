@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this website or its source, please cite it using the metadata below."
+title: "Hassam Iqbal — Academic Portfolio"
+version: 1.0.0
+date-released: 2026-08-31
+authors:
+  - family-names: Iqbal
+    given-names: Hassam
+    orcid: "https://orcid.org/0000-0002-1438-9403"
+url: "https://hassamiqbal.github.io"
+repository-code: "https://github.com/hassamiqbal/hassamiqbal.github.io"
+abstract: "Academic portfolio documenting Hassam Iqbal's research in artificial intelligence, synthetic longitudinal health data, causal inference, personalised treatment response, multiple sclerosis and assistive technology."
+keywords:
+  - artificial intelligence
+  - multiple sclerosis
+  - synthetic longitudinal data
+  - causal inference
+  - personalised medicine
+  - interpretable machine learning
+  - assistive technology
+preferred-citation:
+  type: generic
+  authors:
+    - family-names: Iqbal
+      given-names: Hassam
+      orcid: "https://orcid.org/0000-0002-1438-9403"
+  title: "Hassam Iqbal — Academic Portfolio"
+  year: 2026
+  url: "https://hassamiqbal.github.io"
