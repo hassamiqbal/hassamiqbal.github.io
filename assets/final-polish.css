@@ -1,0 +1,37 @@
+/* Small, hand-maintained accessibility and responsive refinements. */
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  color: #fffdf8;
+  background: #153f3c;
+  border: 2px solid #fffdf8;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+a:focus-visible {
+  outline: 3px solid #e96535;
+  outline-offset: 4px;
+}
+
+.portrait-frame img {
+  display: block;
+}
+
+@media (width <= 680px) {
+  .portrait-frame img {
+    object-position: 50% 60%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}

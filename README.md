@@ -40,8 +40,6 @@ His background spans electrical engineering, biomedical signals, assistive techn
 | 2022 | [Regression-Based Real-Time Hand Gesture Recognition and Control for Electric Powered Wheelchair](https://hdl.handle.net/10453/170324) | Conference paper · ACRA |
 | 2021 | [Real-time Control of a Mobile Robot using Electrooculogram based Eye Tracking System](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=InTnUEIAAAAJ&citation_for_view=InTnUEIAAAAJ:u-x6o8ySG0sC) | Conference paper · IMTIC |
 
-The publication explicitly excluded by the site owner is not included in this portfolio.
-
 ## Scholarly profile
 
 Google Scholar snapshot supplied on 31 August 2026:
@@ -65,6 +63,7 @@ Metrics change over time; view the current figures on [Google Scholar](https://s
 ## Technical and deployment notes
 
 - Static HTML and CSS, hosted with GitHub Pages
+- Web-optimised portrait for fast mobile loading
 - Production site is deployed from the main branch
 - No API keys, analytics trackers or patient-level data
 - Semantic metadata includes Schema.org Person data, Open Graph tags and canonical URLs
@@ -76,7 +75,7 @@ Metrics change over time; view the current figures on [Google Scholar](https://s
 | Path | Purpose |
 | --- | --- |
 | index.html | Portfolio content, metadata and semantic markup |
-| assets/ | Compiled production styles |
+| assets/ | Compiled production styles and web-optimised portrait |
 | favicon.svg | Website icon |
 | robots.txt | Search-crawler policy |
 | sitemap.xml | Search-engine sitemap |
