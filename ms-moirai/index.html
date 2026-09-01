@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore MS-MOIRAI and SIMS: Hassam Iqbal's factorised framework for generating and evaluating synthetic longitudinal multiple sclerosis cohorts." />
+    <meta name="author" content="Hassam Iqbal" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#071a24" />
+    <link rel="canonical" href="https://hassamiqbal.github.io/ms-moirai/" />
+    <meta property="og:title" content="MS-MOIRAI / SIMS — Synthetic longitudinal MS research" />
+    <meta property="og:description" content="A public guide to the model, validation evidence, governed software and future SIMS data explorer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hassamiqbal.github.io/ms-moirai/" />
+    <meta property="og:site_name" content="MS-MOIRAI / SIMS" />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:image" content="https://hassamiqbal.github.io/assets/hassam-iqbal-portrait.webp" />
+    <meta property="og:image:alt" content="Portrait of Hassam Iqbal" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="MS-MOIRAI / SIMS" />
+    <meta name="twitter:description" content="Synthetic longitudinal cohorts for multiple sclerosis research." />
+    <title>MS-MOIRAI / SIMS — Synthetic longitudinal MS research</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ResearchProject",
+        "name": "MS-MOIRAI / SIMS",
+        "alternateName": "Synthetic International data in Multiple Sclerosis",
+        "url": "https://hassamiqbal.github.io/ms-moirai/",
+        "description": "A factorised generative framework for clinically grounded synthetic longitudinal multiple sclerosis cohorts.",
+        "creator": {
+          "@type": "Person",
+          "name": "Hassam Iqbal",
+          "url": "https://hassamiqbal.github.io/",
+          "identifier": "https://orcid.org/0000-0002-1438-9403"
+        },
+        "keywords": [
+          "multiple sclerosis",
+          "synthetic data",
+          "longitudinal data",
+          "deep learning",
+          "clinical artificial intelligence",
+          "privacy-preserving research"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="MS-MOIRAI home">
+        <svg viewBox="0 0 42 42" aria-hidden="true">
+          <path d="M7 28c5-15 8-15 13 0s8 15 15 0" />
+          <circle cx="8" cy="28" r="2" />
+          <circle cx="35" cy="28" r="2" />
+        </svg>
+        <span><strong>MS-MOIRAI</strong><small>/ SIMS</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <span></span><span></span><span></span><span class="sr-only">Open navigation</span>
+      </button>
+      <nav id="site-nav" aria-label="Project navigation" data-nav>
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#explorer">Model explorer</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#access">Access</a>
+        <a class="nav-owner" href="https://hassamiqbal.github.io/">Researcher profile</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span>PhD study 01</span> Synthetic longitudinal multiple sclerosis research</p>
+          <h1>Model the patient journey.<br /><em>Protect the patient record.</em></h1>
+          <p class="hero-lede">MS-MOIRAI separates who a patient is at baseline from how their disease evolves over time. Its governed output, SIMS, is designed to support longitudinal MS research without publishing the source patient records.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#explorer">Explore the model <span aria-hidden="true">↘</span></a>
+            <a class="button button-ghost" href="#evidence">See the evidence</a>
+          </div>
+          <div class="hero-status" aria-label="Project status">
+            <span><i class="status-live"></i>Production software v0.1.0</span>
+            <span>Research use only</span>
+            <span>Not a clinical tool</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Conceptual view of longitudinal synthetic trajectories">
+          <div class="visual-toolbar"><span>Conceptual trajectory space</span><span>10 visits</span></div>
+          <svg class="trajectory-figure" viewBox="0 0 680 430" role="img" aria-labelledby="trajectory-title trajectory-desc">
+            <title id="trajectory-title">Conceptual real and synthetic longitudinal trajectories</title>
+            <desc id="trajectory-desc">Several softly coloured curves move across ten visits, representing variation in longitudinal disease paths.</desc>
+            <g class="grid-lines">
+              <path d="M54 52H640M54 132H640M54 212H640M54 292H640M54 372H640" />
+              <path d="M54 52V372M119 52V372M184 52V372M249 52V372M314 52V372M379 52V372M444 52V372M509 52V372M574 52V372M640 52V372" />
+            </g>
+            <g class="axis-labels">
+              <text x="54" y="404">V1</text><text x="314" y="404">V5</text><text x="624" y="404">V10</text>
+              <text x="13" y="59">High</text><text x="19" y="377">Low</text>
+            </g>
+            <path class="trajectory real one" d="M54 310C96 294 102 259 119 254S168 277 184 248 226 190 249 211 289 246 314 217 352 159 379 177 417 226 444 202 486 138 509 158 553 198 574 169 614 117 640 130" />
+            <path class="trajectory real two" d="M54 256C87 239 98 220 119 231S157 274 184 263 220 218 249 225 290 278 314 268 347 222 379 230 416 276 444 261 488 208 509 218 551 254 574 244 614 207 640 209" />
+            <path class="trajectory synthetic three" d="M54 327C92 304 95 278 119 282S154 320 184 297 221 236 249 246 282 286 314 265 349 210 379 225 413 274 444 251 483 179 509 193 543 236 574 219 610 170 640 178" />
+            <path class="trajectory synthetic four" d="M54 186C87 204 94 231 119 219S156 165 184 178 221 229 249 214 283 146 314 157 350 204 379 192 418 144 444 153 481 203 509 188 548 126 574 140 611 183 640 171" />
+            <g class="visit-points">
+              <circle cx="54" cy="310" r="5" /><circle cx="119" cy="254" r="5" /><circle cx="184" cy="248" r="5" /><circle cx="249" cy="211" r="5" /><circle cx="314" cy="217" r="5" /><circle cx="379" cy="177" r="5" /><circle cx="444" cy="202" r="5" /><circle cx="509" cy="158" r="5" /><circle cx="574" cy="169" r="5" /><circle cx="640" cy="130" r="5" />
+            </g>
+          </svg>
+          <div class="visual-legend"><span><i class="legend-real"></i>Observed structure</span><span><i class="legend-synthetic"></i>Synthetic variation</span><small>Illustrative model concept — not patient data</small></div>
+        </div>
+      </section>
+
+      <section class="numbers" aria-label="Research scale">
+        <article><strong>77,081</strong><span>registry participants in the source research cohort</span></article>
+        <article><strong>723,672</strong><span>longitudinal clinical visits studied</span></article>
+        <article><strong>29</strong><span>features represented at each modelled visit</span></article>
+        <article><strong>2.8M</strong><span>synthetic trajectories generated at research scale</span></article>
+      </section>
+
+      <section class="overview section-pad" id="overview">
+        <div class="section-label"><span>01</span> The research question</div>
+        <div class="overview-grid">
+          <div>
+            <p class="kicker">Why this project exists</p>
+            <h2>Longitudinal MS data are valuable, scarce and difficult to share.</h2>
+          </div>
+          <div class="overview-copy">
+            <p>Multiple sclerosis unfolds over years, but real-world records are irregular: visits occur at different times, treatments change, outcomes are missing and patient privacy restricts access.</p>
+            <p>The project asks whether a generative framework can preserve useful population and temporal structure while producing new, governed trajectories for research—not digital copies of individuals.</p>
+            <div class="research-question">
+              <span>Core question</span>
+              <blockquote>Can synthetic longitudinal cohorts support credible MS research while reducing dependence on direct access to patient-level records?</blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="method section-pad" id="method">
+        <div class="section-label light"><span>02</span> The factorised method</div>
+        <div class="method-heading">
+          <div><p class="kicker">One framework, four controlled stages</p><h2>Baseline diversity and disease dynamics are learned separately.</h2></div>
+          <p>This factorisation lets each component do a narrower job, then subjects the assembled cohort to clinical and structural release checks.</p>
+        </div>
+
+        <div class="method-stage" data-stage-panel>
+          <div class="stage-tabs" role="tablist" aria-label="MS-MOIRAI stages">
+            <button class="active" type="button" role="tab" aria-selected="true" data-stage="baseline"><span>01</span>Baseline</button>
+            <button type="button" role="tab" aria-selected="false" data-stage="dynamics"><span>02</span>Dynamics</button>
+            <button type="button" role="tab" aria-selected="false" data-stage="generation"><span>03</span>Generation</button>
+            <button type="button" role="tab" aria-selected="false" data-stage="release"><span>04</span>Release gates</button>
+          </div>
+          <div class="stage-content">
+            <div class="stage-visual" aria-hidden="true">
+              <div class="data-node node-input"><small>Input</small><strong>Baseline profile</strong></div>
+              <div class="stage-core"><span data-stage-icon>β</span><small data-stage-core>Variational baseline model</small></div>
+              <div class="data-node node-output"><small>Output</small><strong data-stage-output>Diverse synthetic starting states</strong></div>
+              <svg viewBox="0 0 560 150"><path d="M116 75H218M342 75H444" /><path d="m204 65 14 10-14 10M430 65l14 10-14 10" /></svg>
+            </div>
+            <div class="stage-copy"><span data-stage-number>Stage 01</span><h3 data-stage-title>Represent baseline heterogeneity</h3><p data-stage-description>A cross-sectional variational model generates plausible starting profiles while keeping baseline sampling distinct from the longitudinal transition process.</p><ul data-stage-list><li>Cross-sectional representation</li><li>Controlled synthetic sampling</li><li>No source rows published</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="explorer section-pad" id="explorer">
+        <div class="section-label"><span>03</span> Public model explorer</div>
+        <div class="explorer-grid">
+          <div class="explorer-intro">
+            <p class="kicker">Understand the frozen model contract</p>
+            <h2>What does the longitudinal model predict?</h2>
+            <p>Select an output to see what enters the model, what comes back and how that output contributes to a synthetic trajectory.</p>
+            <div class="explorer-note"><strong>Safe public interface</strong><p>This explainer runs entirely in your browser. It uses no patient records, accepts no clinical identifiers and does not execute the private model.</p></div>
+          </div>
+
+          <div class="contract-card">
+            <div class="contract-toolbar"><span>MS-MOIRAI · frozen contract</span><span class="contract-version">component2-v0.1.0</span></div>
+            <div class="contract-input">
+              <span>Context window</span>
+              <strong>Five previous visits</strong>
+              <div class="visit-sequence" aria-label="Five input visits"><i>V1</i><b></b><i>V2</i><b></b><i>V3</i><b></b><i>V4</i><b></b><i>V5</i></div>
+              <small>29 features × 5 time points</small>
+            </div>
+            <div class="output-selector" role="tablist" aria-label="Model outputs">
+              <button class="active" type="button" data-output="edss" aria-selected="true">ΔEDSS</button>
+              <button type="button" data-output="dmt" aria-selected="false">DMT tier</button>
+              <button type="button" data-output="gap" aria-selected="false">Visit gap</button>
+              <button type="button" data-output="relapse" aria-selected="false">Relapse</button>
+            </div>
+            <div class="output-detail" aria-live="polite">
+              <div><span data-output-label>Continuous output</span><strong data-output-title>Change in disability</strong></div>
+              <p data-output-description>Predicts the change in Expanded Disability Status Scale score used to construct the next visit.</p>
+              <dl><div><dt>Model head</dt><dd data-output-head>Regression</dd></div><div><dt>Trajectory role</dt><dd data-output-role>Updates disability state</dd></div><div><dt>Public endpoint</dt><dd>Contract metadata only</dd></div></dl>
+            </div>
+            <div class="contract-json"><div><span></span><span></span><span></span><small>Example public metadata</small></div><pre><code data-contract-json>{
+  "sequence_length": 5,
+  "input_features": 29,
+  "selected_output": "delta_edss",
+  "clinical_use": false
+}</code></pre></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="evidence section-pad" id="evidence">
+        <div class="section-label"><span>04</span> Validation evidence</div>
+        <div class="evidence-heading"><div><p class="kicker">More than visual similarity</p><h2>Fidelity, realism, utility and privacy were examined separately.</h2></div><p>No single score establishes that a synthetic cohort is useful or safe. The evaluation therefore combines population comparisons, temporal tests, discrimination, blinded clinical review, downstream utility and privacy-proxy diagnostics.</p></div>
+
+        <div class="evidence-grid">
+          <article class="metric-card metric-primary">
+            <span>Blinded clinical realism</span>
+            <strong>45.8<small>%</small></strong>
+            <p>Mean classification accuracy across six reviewers judging 20 blinded trajectories.</p>
+            <div class="chance-line"><i></i><span>Chance = 50%</span></div>
+          </article>
+          <article class="metric-card">
+            <span>Visit-level discrimination</span>
+            <strong>0.545</strong>
+            <p>Area under the ROC curve when distinguishing individual real and synthetic visits.</p>
+            <div class="auc-scale"><i style="--score: 9%"></i><span>0.50</span><span>1.00</span></div>
+          </article>
+          <article class="metric-card">
+            <span>Trajectory-level discrimination</span>
+            <strong>0.698</strong>
+            <p>Patient-level temporal summaries still reveal measurable differences that should not be hidden.</p>
+            <div class="auc-scale"><i style="--score: 39.6%"></i><span>0.50</span><span>1.00</span></div>
+          </article>
+          <article class="metric-card metric-text">
+            <span>Downstream clinical utility</span>
+            <strong>TSTR <small>vs</small> TRTR</strong>
+            <p>EDSS-worsening models trained on synthetic or real data are evaluated on the same held-out real cohort.</p>
+            <div class="utility-key"><i></i>Train synthetic, test real <i></i>Train real, test real</div>
+          </article>
+        </div>
+
+        <div class="evidence-boundary">
+          <div><span>What the evidence supports</span><p>SIMS preserved several important population features and produced trajectories that clinicians could not reliably separate from real records in a small blinded review.</p></div>
+          <div><span>What remains imperfect</span><p>Longitudinal EDSS, relapse burden, disease duration, treatment-tier composition and temporal dependence retained detectable differences.</p></div>
+          <div><span>Privacy claim boundary</span><p>Membership inference and nearest-neighbour analyses are privacy-proxy diagnostics only. They are not formal re-identification tests or differential-privacy guarantees.</p></div>
+        </div>
+      </section>
+
+      <section class="access section-pad" id="access">
+        <div class="section-label light"><span>05</span> Access and roadmap</div>
+        <div class="access-heading"><p class="kicker">Public now. Expandable later.</p><h2>One permanent home for the model, paper figures and governed SIMS releases.</h2><p>The project site is designed to grow with the research. Public access will expand only when each artefact is scientifically frozen and governance-approved.</p></div>
+        <div class="access-grid">
+          <article class="access-card ready"><span class="access-status">Available now</span><h3>Interactive project guide</h3><p>Plain-language study overview, factorised architecture, frozen model contract and transparent validation summary.</p><a href="#overview">Start exploring <span>→</span></a></article>
+          <article class="access-card ready"><span class="access-status">Available now</span><h3>Production interface</h3><p>Versioned CLI, FastAPI service contract, Docker image, testing, monitoring and governed release workflow.</p><button type="button" data-open-contract>View service contract <span>→</span></button></article>
+          <article class="access-card planned"><span class="access-status">Next release</span><h3>Paper figure gallery</h3><p>Publication-quality plots, captions, methods notes and accessible explanations linked to the final manuscript.</p><span class="access-muted">Awaiting final figure approval</span></article>
+          <article class="access-card planned"><span class="access-status">Governance-gated</span><h3>SIMS data explorer</h3><p>Aggregate cohort summaries and approved downloadable synthetic data with a data dictionary, provenance and licence.</p><span class="access-muted">No patient-level source data will be exposed</span></article>
+        </div>
+
+        <div class="service-contract" hidden data-contract-modal aria-labelledby="contract-modal-title" role="dialog" aria-modal="true">
+          <div class="modal-backdrop" data-close-contract></div>
+          <div class="modal-panel">
+            <button class="modal-close" type="button" aria-label="Close service contract" data-close-contract>×</button>
+            <p class="kicker">Public-safe API surface</p>
+            <h2 id="contract-modal-title">Production service contract</h2>
+            <p>The production package exposes operational and model-contract endpoints. Full cohort generation remains a governed batch workflow.</p>
+            <ul class="endpoint-list"><li><span>GET</span><code>/health</code><small>Process health</small></li><li><span>GET</span><code>/ready</code><small>Bundle checksum readiness</small></li><li><span>GET</span><code>/model-contract</code><small>Non-patient model metadata</small></li><li><span>POST</span><code>/smoke-model</code><small>Frozen prediction-contract test</small></li><li><span>GET</span><code>/metrics</code><small>Aggregate operational metrics</small></li></ul>
+            <div class="modal-warning"><strong>Not exposed</strong><p>Raw MSBase data, patient identifiers, source rows, unrestricted cohort generation and private model artefacts.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="researcher">
+        <div class="researcher-photo"><img src="https://hassamiqbal.github.io/assets/hassam-iqbal-portrait.webp" alt="Hassam Iqbal, doctoral researcher" width="900" height="1017" loading="lazy" /></div>
+        <div><p class="kicker">Researcher</p><h2>Developed by Hassam Iqbal</h2><p>Doctoral researcher at the University of Melbourne and Royal Melbourne Hospital, developing AI methods for synthetic longitudinal data, clinical prediction and personalised therapy in multiple sclerosis.</p><div class="researcher-links"><a href="https://hassamiqbal.github.io/">Full research profile</a><a href="https://orcid.org/0000-0002-1438-9403" target="_blank" rel="noreferrer">ORCID</a><a href="https://scholar.google.com/citations?user=InTnUEIAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a></div></div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="footer-brand" href="#top">MS-MOIRAI <span>/ SIMS</span></a>
+      <div><p>Research software and public project guide</p><p>Melbourne, Victoria, Australia · © 2026 Hassam Iqbal</p></div>
+      <div class="footer-note"><strong>Research use only</strong><span>This website does not provide medical advice or patient-specific predictions.</span></div>
+    </footer>
+
+    <script src="assets/app.js" defer></script>
+  </body>
+</html>
