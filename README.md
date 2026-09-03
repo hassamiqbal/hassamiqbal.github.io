@@ -1,6 +1,6 @@
 # Hassam Iqbal — Academic Portfolio
 
-Official academic portfolio of **Hassam Iqbal**, an engineer, researcher and doctoral candidate working at the intersection of artificial intelligence, clinical data science and multiple sclerosis research.
+Official academic portfolio of **Hassam Iqbal**, a University of Melbourne PhD candidate, Data Manager at the Murdoch Children’s Research Institute and Research Assistant at The Florey Institute, working at the intersection of artificial intelligence, clinical data science and multiple sclerosis research.
 
 ## Live website
 
@@ -12,17 +12,29 @@ The website presents research themes, publications, technical projects, academic
 
 Hassam Iqbal is a doctoral researcher at the University of Melbourne and the Royal Melbourne Hospital. His research focuses on clinically grounded synthetic longitudinal data, causal inference, interpretable machine learning and personalised treatment-response modelling in multiple sclerosis.
 
-His background spans electrical engineering, biomedical signals, assistive technology, longitudinal cohort data management and applied artificial intelligence.
+His background spans electrical engineering, biomedical signals, assistive technology, longitudinal cohort data management and applied artificial intelligence. He is based in Melbourne, Victoria, Australia.
 
 ## Research focus
 
 - Artificial intelligence for healthcare
 - Multiple sclerosis and neuroimmunology
 - Synthetic longitudinal health data
-- Causal inference and personalised treatment response
+- Multi-horizon prognostic modelling
+- Treatment-conditioned prediction and personalised treatment response
+- Causal inference
 - Interpretable and responsible machine learning
 - Clinical data quality, governance and cohort management
 - Biomedical signals, human–computer interaction and assistive technology
+
+## Current doctoral projects
+
+### MS-Moirai / SIMS
+
+A clinically grounded generative framework for producing and validating synthetic longitudinal multiple sclerosis cohorts. The public [MS-Moirai project site](https://hassamiqbal.github.io/ms-moirai/) explains the research programme without exposing governed patient data.
+
+### Crystal Ball 2.0
+
+An active private analysis using the contemporary 2025 MSBase cohort to model relapse, confirmed disability worsening (CDW), confirmed disability improvement (CDI), and progression independent of relapse activity (PIRA) across nine DMT groups and 12-, 24- and 48-month horizons. The final V15 analysis is in preparation. The repository and detailed research portal remain private until manuscript and governance approval.
 
 ## Research outputs featured on the website
 
