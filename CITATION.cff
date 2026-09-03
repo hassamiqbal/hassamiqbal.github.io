@@ -9,11 +9,13 @@ authors:
     orcid: "https://orcid.org/0000-0002-1438-9403"
 url: "https://hassamiqbal.github.io"
 repository-code: "https://github.com/hassamiqbal/hassamiqbal.github.io"
-abstract: "Academic portfolio documenting Hassam Iqbal's research in artificial intelligence, synthetic longitudinal health data, causal inference, personalised treatment response, multiple sclerosis and assistive technology."
+abstract: "Academic portfolio documenting Hassam Iqbal's research in artificial intelligence, synthetic longitudinal health data, treatment-conditioned prognostic modelling, causal inference, personalised medicine, multiple sclerosis and assistive technology."
 keywords:
   - artificial intelligence
   - multiple sclerosis
   - synthetic longitudinal data
+  - prognostic modelling
+  - treatment-conditioned prediction
   - causal inference
   - personalised medicine
   - interpretable machine learning
